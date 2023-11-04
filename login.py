@@ -80,7 +80,10 @@ random_indexes_courant = random.sample(range(start_index,start_index+question_ch
 #st.write(random_indexes_courant)
 resultat_courant = df.iloc[random_indexes_courant]
 # Extraction des nb_question
-random_indexes = random.sample(range(0,end_index), nb_question)
+if start_index != 0:
+    random_indexes = random.sample(range(0,start_index), nb_question)
+else: 
+    random_indexes=[]
 resultat = df.iloc[random_indexes]
 
 #for index, row in df.loc[start_index: end_index].iterrows():
